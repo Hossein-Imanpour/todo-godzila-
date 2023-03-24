@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import {useState} from 'react';
 import  {Routes , Route} from 'react-router-dom'
 import Detail from "./pages/Detail";
+import './index.css'
 
 function App() {
 
@@ -27,3 +28,4 @@ function App() {
 }
 
 export default App;
+ 

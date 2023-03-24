@@ -7,7 +7,82 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.main{
+  text-align: center;
+  list-style-type: none;
+}
+.parentt{
+  text-align: center;
+  margin-top: 1rem;
+}
+.parentt input { 
+  /*  */
+}
+
+.parentt button { 
+
+}
+
+.nav-parent{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.btnn{
+  margin:  0.5rem;
+}
+/* input */
+.inp{
+  width: 25rem;
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #ccc;
+  padding-left: 1rem;
+  outline: none;
+  text-align: center;
+}
+.submit-btn{
+  height: 3rem;
+  margin-left: .5rem;
+  width: 5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.ul{
+  background-color: #ccc;
+  max-width: 100rem;
+}
+.todos{
+  font-size: 3rem;
+  max-width: 65rem;
+  padding: 1rem;
+  background: #000;
+  margin: 1rem  ;
+  color: #fff;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-self: center;
+
+}
+.btn-sec{
+  /* display: inline-block; */
+  margin-left: -17rem
+  
+}
+
+.del-btn{
+  margin-left: 24rem;
+}
+.edit-btn{
+  color: #000;
+}
+
+.icons{
+color: #000;
 }
