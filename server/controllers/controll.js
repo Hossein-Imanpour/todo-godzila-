@@ -1,4 +1,5 @@
  const todos = require('../model/todos')
+
 const  homePage = (req , res ) => {
     res.send('<h1>this is a home page</h1>')
 }
@@ -15,6 +16,18 @@ const getTodo = async (req , res ) => {
         console.log(error);
     }
 }
+
+// const getOneTodo = async (req ,res ) => {
+//     try {
+//         const {id  : _id} = req.params
+//         const todos = todos.findById({_id});
+//         res.status(200).json(todos)
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+
 
 const createTodo = async (req , res ) => {
     const {todo} = req.body
@@ -34,4 +47,6 @@ const createTodo = async (req , res ) => {
 
  
 
-module.exports = {getTodo , createTodo , homePage};
+module.exports = {getTodo , createTodo , homePage ,
+    // getOneTodo
+};

@@ -4,7 +4,8 @@ const app = express();
 // const { homePage} = require('./controllers/controll')
 const connect = require('./db/connect')
 const todoRouter = require('./Routes/todoRouter')
-
+const cors = require('cors');
+app.use(cors())
 app.use(express.urlencoded({ extended: false }), express.json());
 app.use('/' , todoRouter)
 
@@ -22,4 +23,4 @@ connect(process.env.MONGO_URI)
 })
 .catch((err) => {
     console.log(err);
-})
+}) 
