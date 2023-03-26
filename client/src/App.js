@@ -9,7 +9,7 @@ function App() {
 
 
 
-  const [todos, setTodos] = useState(["item 1", "item 2", "item 3"]);
+  const [todos, setTodos] = useState([]);
 
   const [newTodo, setNewTodo] = useState("");
 

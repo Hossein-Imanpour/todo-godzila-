@@ -12,6 +12,22 @@ const Main = ({todos, setTodos ,newTodo , setNewTodo ,edit , setEdit}) => {
     if (newTodo !== "") {
       setTodos([...todos, newTodo]);
       setNewTodo("");
+      /// use  fetch to send a new todo;
+      fetch('http://localhost:4000/' ,{
+        method: "POST",
+        headers: {
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({'todo' : newTodo})
+      })
+      .then((res) => {
+        console.log(res.json);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+        /// end of fetch operation  ;
     } else {
       alert("type something !");
     }
@@ -28,22 +44,23 @@ useEffect(() => {
         console.log(data);
         setFetchData(data)
     })
-    }, []);
+    }, [todos]);
 ////////////////////////
 
   return (
     <>
-        <section className="parentt   " mt="5rem">
+        
+        <form className="parentt   " mt="5rem" onSubmit={handleClick}>
         <input
         type="text"
         placeholder="Add task ... "
         className="input-val inp  "
         onChange={(e) => setNewTodo(e.target.value)}
       />
-      <button className="submit-btn bg-primary" onClick={handleClick}>
+      <button className="submit-btn bg-primary" >
         submit
       </button>
-        </section>
+        </form>
 
       <br />
       <br />
@@ -52,7 +69,7 @@ useEffect(() => {
             <ul className="main ul container">
                {  fetchData?.map((a) => ( 
 
-                <li key={a.todo} className='main todos  '>
+                <li key={a._id} className='main todos  '>
                     {a.todo}
                     <section className="btn-sec">
                     <button className="del-btn"><span class="material-symbols-outlined icons">delete</span></button>
