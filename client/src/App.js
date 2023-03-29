@@ -9,7 +9,7 @@ function App() {
 
 
 
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
 
   const [newTodo, setNewTodo] = useState("");
 
@@ -20,7 +20,7 @@ function App() {
    <>
    <Navbar />
    <Routes>
-      <Route path="/" element={<Main todos={todos} setTodos={setTodos} newTodo={newTodo} setNewTodo={setNewTodo}  edit={edit} setEdit={setEdit}/>}/>
+      <Route path="/" element={<Main   newTodo={newTodo} setNewTodo={setNewTodo}  edit={edit} setEdit={setEdit}/>}/>
       <Route path="task-detail" element={<Detail/>}/>
    </Routes>
    </>

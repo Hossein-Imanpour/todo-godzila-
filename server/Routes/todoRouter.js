@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {getTodo , createTodo  } = require('../controllers/controll');
+const {getTodo , createTodo , deleteTodo } = require('../controllers/controll');
 
 
 // router.route('/').get(homePage)
-router.route('/').get(getTodo)
-router.route('/').post(createTodo)
-
+router.get('/' ,getTodo)
+router.post('/' ,createTodo)
+router.delete('/:id' ,deleteTodo)
 module.exports = router;

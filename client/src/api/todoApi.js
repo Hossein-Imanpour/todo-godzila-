@@ -11,3 +11,7 @@ export const getAllTodos = async () => {
     }
 }
  
+export async function deleteTodo(id) {
+    console.log(baseurl + id);
+    await axios.delete(baseurl + id);
+}
