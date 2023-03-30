@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseurl = 'http://localhost:4000/';
+const baseurl = 'https://todo-list-oiax.onrender.com/';
 
 export const getAllTodos = async () => {
     try {

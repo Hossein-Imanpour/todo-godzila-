@@ -2,18 +2,19 @@ import { useState } from "react";
 import { useEffect } from 'react';
 // import axios from "axios";
 import { deleteTodo } from "../api/todoApi";
+import {useNavigate} from 'react-router-dom'
 // import {Link} from 'react-router-dom'
 
 const Main = ({ newTodo , setNewTodo ,edit , setEdit}) => {
 
     const [fetchData , setFetchData] = useState([]) 
-
+  const navigate = useNavigate()
   const handleClick = (e) => {
     e.preventDefault();
 
     if (newTodo) {
       /// use  fetch to send a new todo;
- fetch('http://localhost:4000/' ,{
+ fetch('https://todo-list-oiax.onrender.com/' ,{
             method: "POST",
             headers: {
                 'Accept' : 'application/json',
@@ -44,7 +45,7 @@ const Main = ({ newTodo , setNewTodo ,edit , setEdit}) => {
 
 
 useEffect(() => {
-    fetch('http://localhost:4000/')
+    fetch('https://todo-list-oiax.onrender.com/')
     .then((res)=> {
       return res.json();
     })
@@ -54,11 +55,11 @@ useEffect(() => {
     })
     }, []);
 ////////////////////////
-const handleDelete =  (id) => {
+const handleDelete = async (id) => {
 
- const ID = id.target.parentElement.parentElement.parentElement.id;
- deleteTodo(ID);
-
+ const  ID = id.target.parentElement.parentElement.parentElement.id;
+ await deleteTodo(ID);
+  navigate(0)
 }
 ////////////////////////
 
